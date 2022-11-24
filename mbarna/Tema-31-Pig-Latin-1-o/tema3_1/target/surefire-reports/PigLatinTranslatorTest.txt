@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: PigLatinTranslatorTest
+-------------------------------------------------------------------------------
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 21, Time elapsed: 1.115 s - in PigLatinTranslatorTest
