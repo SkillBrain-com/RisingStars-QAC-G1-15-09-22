@@ -1,0 +1,30 @@
+public class Lasagna {
+    // TODO: define the 'expectedMinutesInOven()' method
+    public static int expectedMinutesInOven(){
+
+        Int lasagna = new Lasagna;
+        int lasagna.expectedMinutesInOven = 40;
+        System.out.println(lasagna.expectedMinutesInOven);
+      
+        
+    }
+    // TODO: define the 'remainingMinutesInOven()' method
+     public static int remainingMinutesInOven(int minuteInCuptor) {
+    
+      
+      int lasagna.expectedMinutesInOven = 40;
+      int lasagna.remainingMinutesInOven = 30;
+      int restMinute = lasagna.expectedMinutesInOven-lasagna.remainingMinutesInOven;
+      return restMinute;
+    }
+
+
+    // TODO: define the 'preparationTimeInMinutes()' method
+     public static int preparationTimeInMinutes(int layers){
+     
+      int lasagna.preparationTimeInMinutes = 2;
+      int layers = 2;
+      int totalTimePrep = lasagna.preparationTimeInMinutes*layers;
+         return totalTimePrep;
+       
+    }
