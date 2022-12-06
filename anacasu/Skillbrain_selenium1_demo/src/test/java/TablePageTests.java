@@ -15,6 +15,8 @@ public class TablePageTests {
         tablePage.clickTableData();
         System.out.println(tablePage.changeTableTitle("New Title"));
 
+        tablePage.changeTableId("newId");
+
         List<String> name = new ArrayList<>();
         name.add("Maria");
         name.add("Ion");
@@ -29,10 +31,11 @@ public class TablePageTests {
         System.out.println(jsonFormated);
         tablePage.changeTableData(jsonFormated);
 
-        tablePage.changeTableId("newId");
+
 
         BrowserManager.closeChromeDriver(driver);
     }
 }
-//1.sa modificati metoda de getTableData astfel incat sa primesc ca si parametru id-ul din html si sa caute elemntele dupa el
-//2.la fel  pentru getTableTitle
+//adaugati un nou atribut in clasa tablePageManager in care sa salvati valoarea initiala a id tabel
+//modificati acel atribut doar daca se apeleaza metoda de change id
+//ce e in test trebuie sa ruleze fara eroare
