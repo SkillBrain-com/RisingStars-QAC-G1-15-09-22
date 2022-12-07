@@ -36,12 +36,12 @@ public class TablePageManager {
     }
 
     public static String getTableTitle(){
-        WebElement tableTitle = driver.findElement(By.cssSelector("#dynamictable caption"));
+        WebElement tableTitle = driver.findElement(By.cssSelector("#"+getInitialTableId()+" caption"));
         return tableTitle.getText();
     }
 
     public static List<String> getTableData(){
-        List<WebElement> tableRows = driver.findElements(By.cssSelector("#dynamictable tr"));
+        List<WebElement> tableRows = driver.findElements(By.cssSelector("#"+getInitialTableId()+" tr"));
         List<String> tableData = new ArrayList<>();
         for(WebElement elem:tableRows){
             tableData.add(elem.getText());
