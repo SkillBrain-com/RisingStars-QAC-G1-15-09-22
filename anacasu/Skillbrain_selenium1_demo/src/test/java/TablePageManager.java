@@ -12,11 +12,13 @@ public class TablePageManager {
     private static String url; // pagina pe care lucram
     private static ChromeDriver driver = null; // salvam instanta de chrome pe care o vom folosi in tate emtodele din clasa
 
+    private static String tableId ;
     TablePageManager(String url,ChromeDriver driver) // constructor
     {
         this.url = url;
         this.driver = driver;
         driver.get(url);
+        this.tableId = "dynamictable" ;
     }
 
     public static String checkPage (){
@@ -26,12 +28,12 @@ public class TablePageManager {
     }
 
     public static String getTableTitle(){
-        WebElement tableTitle = driver.findElement(By.cssSelector("#dynamictable caption"));
+        WebElement tableTitle = driver.findElement(By.cssSelector("#" + tableId + " caption"));
         return tableTitle.getText();
     }
 
     public static List<String> getTableData(){
-        List<WebElement> tableRows = driver.findElements(By.cssSelector("#dynamictable tr"));
+        List<WebElement> tableRows = driver.findElements(By.cssSelector("#" + tableId + " caption"));
         List<String> tableData = new ArrayList<>();
         for(WebElement elem:tableRows){
             tableData.add(elem.getText());
@@ -78,6 +80,7 @@ public class TablePageManager {
         tableIdInput.clear();
         tableIdInput.sendKeys(newTableId);
         clickRefreshButton();
+        tableId = newTableId;
         WebElement newIdCheck = driver.findElement(By.id(newTableId));
         System.out.println(newIdCheck.getText());
     }
