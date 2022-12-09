@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -49,10 +50,14 @@ public class DemoQA {
     }
 
     public static void submitButton() {
-        WebElement clickSubmitButton = driver.findElement(By.xpath("/html/body/div[2]/div/div/div[2]/div[2]/div[2]/form/div[5]/div/button"));
+        WebElement clickSubmitButton = driver.findElement(By.cssSelector("#submit"));
         //imi apareau add-uri si nu ma lasa sa dau click pe Submit, de aia am bagat Actions
-        Actions actions = new Actions(driver);
-        actions.moveToElement(clickSubmitButton).perform();
+        // Actions actions = new Actions(driver);
+        // actions.moveToElement(clickSubmitButton).perform();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        //Scroll down till the bottom of the page
+        js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
         clickSubmitButton.click();
     }
 
