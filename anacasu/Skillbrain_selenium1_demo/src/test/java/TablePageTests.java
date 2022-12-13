@@ -1,41 +1,52 @@
+import org.example.BrowserManager;
+import org.example.DemoQA;
+import org.example.InputData;
+import org.example.TablePageManager;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
-public class TablePageTests {
+import static org.testng.Assert.assertEquals;
+
+public class TablePageTests implements InputData {
+
     public static void main(String[] args) {
+        //        ChromeDriver driver = org.example.BrowserManager.createDriver();
+//        org.example.TablePageManager tablePage = new org.example.TablePageManager(url,driver);
+//
+//        System.out.println(tablePage.checkPage());
+//        System.out.println(tablePage.getTableTitle());
+//        System.out.println(tablePage.getTableData());
+//
+//        tablePage.clickTableData();
+//        System.out.println(tablePage.changeTableTitle("New Title"));
+//        tablePage.changeTableId("newId");
+//
+//        Collections.addAll(name,"Maria","Ion","George");
+//        Collections.addAll(age,1,2,3);
+//
+//
+//        String jsonFormated = tablePage.createJson(name,age);
+//        System.out.println(jsonFormated);
+//        tablePage.changeTableData(jsonFormated);
+//
+//
+//        org.example.BrowserManager.closeChromeDriver(driver);
+
         ChromeDriver driver = BrowserManager.createDriver();
-        TablePageManager tablePage = new TablePageManager("https://testpages.herokuapp.com/styled/tag/dynamic-table.html",driver);
-
-        System.out.println(tablePage.checkPage());
-        System.out.println(tablePage.getTableTitle());
-        System.out.println(tablePage.getTableData());
-
-        tablePage.clickTableData();
-        System.out.println(tablePage.changeTableTitle("New Title"));
-
-        tablePage.changeTableId("newId");
-
-        List<String> name = new ArrayList<>();
-        name.add("Maria");
-        name.add("Ion");
-        name.add("George");
-
-        List<Integer> age = new ArrayList<>();
-        age.add(1);
-        age.add(2);
-        age.add(3);
-
-        String jsonFormated = tablePage.createJson(name,age);
-        System.out.println(jsonFormated);
-        tablePage.changeTableData(jsonFormated);
-
-
+        DemoQA demoqa = new DemoQA(url_demoqa,driver);
+        demoqa.clickTextBoxLink();
+        demoqa.fillTextBoxPage("ana casu","bla@test.com","adress","permanent address");
+        demoqa.checkTextBoxPage();
 
         BrowserManager.closeChromeDriver(driver);
+
     }
-}
-//adaugati un nou atribut in clasa tablePageManager in care sa salvati valoarea initiala a id tabel
-//modificati acel atribut doar daca se apeleaza metoda de change id
-//ce e in test trebuie sa ruleze fara eroare
+
+    }
+
+
