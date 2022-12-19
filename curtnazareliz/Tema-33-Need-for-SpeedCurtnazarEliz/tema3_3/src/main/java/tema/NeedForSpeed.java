@@ -6,9 +6,9 @@ class NeedForSpeed {
     int distanceDriven;
     int remainingBattery;
 
-  NeedForSpeed (int speed, int baterryDrain){
+  NeedForSpeed (int speed, int batteryDrain){
     this.speed = speed;
-    this.batterryDrain = baterryDrain;
+    this.batteryDrain = batteryDrain;
     this.distanceDriven = 0;
     this.remainingBattery = 100;
   }
@@ -53,7 +53,7 @@ class RaceTrack {
    public boolean carCanFinish(NeedForSpeed car) {
             // throw new UnsupportedOperationException("Please implement the RaceTrack.carCanFinish() method")
 
-    int distanceThatBeDrive = 100 / car.baterryDrain;
+    int distanceThatBeDrive = 100 / car.batteryDrain;
     int distanceDriven = distanceThatBeDrive * car.speed;
     
     if(distanceDriven >= this.distance) {
